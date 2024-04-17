@@ -1,16 +1,12 @@
 import React, { useEffect } from "react"
+import TrGenero from "./TrGenero"
 
-export default function Table() {
+export default function Table({generos = []}) {
     return (
         <table className="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">
-                        <div className="form-check form-switch">
-                            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
-                            <label className="form-check-label" for="flexSwitchCheckChecked">Activo</label>
-                        </div>
-                    </th>
+                    <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Estado</th>
@@ -18,13 +14,13 @@ export default function Table() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                </tr>
+                {
+                    generos.map((genero, index) => {
+                        return (
+                            <TrGenero genero={genero} index={index} key={index+1}/>
+                        )
+                    })
+                }
             </tbody>
         </table>
     )
