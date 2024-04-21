@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -6,27 +7,30 @@ export default function Navbar() {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
 
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <Link to='/' className="navbar-brand" >
+                    Navbar
+                    </Link>
+
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link active" href="#">Genero</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Productora</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Media</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#">Director</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#">Tipos</a>
-                        </li>
+                        <NavLink to='/' className="nav-link " >
+                        Generos
+                        </NavLink>
+                        <NavLink to='/productoras' className="nav-link " >
+                        Productoras
+                        </NavLink>
+                        <NavLink to='/Series-Peliculas' className="nav-link " >
+                        Series y Peliculas
+                        </NavLink>
+                        <NavLink to='directores' className="nav-link " >
+                        Directores
+                        </NavLink>
+                        <NavLink to='tipos' className="nav-link " >
+                        Tipos
+                        </NavLink>
                     </ul>
                 </div>
             </div>

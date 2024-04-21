@@ -1,15 +1,9 @@
-import Generos from "./conponents/generos/Generos";
-import Footer from "./conponents/ui/Footer";
-import Navbar from "./conponents/ui/NavBar";
+import AppRouter from "./routers/AppRouter";
 
 function App() {
   return (
     <>
-      <div className="container">
-        <Navbar />
-        <Generos/>
-      </div>
-      <Footer />
+      <AppRouter/>
     </>
   );
 }

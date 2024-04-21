@@ -1,13 +1,14 @@
 import React from "react"
-import TrGenero from "./TrGenero"
+import TrProductora from "./TrProductora"
 
-export default function Table({generos = [], borrarGenero, editarGenero}) {
+export default function Table({productoras = [], borrarProductora, editarProductora}) {
     return (
         <table className="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Slogan</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Creado</th>
@@ -15,9 +16,9 @@ export default function Table({generos = [], borrarGenero, editarGenero}) {
             </thead>
             <tbody>
                 {
-                    generos.map((genero, index) => {
+                    productoras.map((productora, index) => {
                         return (
-                            <TrGenero genero={genero} index={index} key={index+1} borrarGenero={borrarGenero} editarGenero={editarGenero}/>
+                            <TrProductora productora={productora} index={index} key={index+1} borrarProductora={borrarProductora} editarProductora={editarProductora}/>
                         )
                     })
                 }
